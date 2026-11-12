@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "name": "IAP 餐厅翻新 Merge-2｜数值与礼包经济",
+    "version": "1.0.0",
+    "reference_note": "参考海外餐厅翻新 Merge-2 的通用结构：生成器、二合升阶、订单、装修与 IAP；不复制任何游戏 IP、素材、剧情或关卡。",
+    "updated": "2026-11-10"
+  },
+  "board": {
+    "rows": 6,
+    "cols": 7
+  },
+  "economy": {
+    "starting_energy": 60,
+    "energy_cap": 120,
+    "daily_energy_regen": 50,
+    "starting_coins": 180,
+    "starting_gems": 30,
+    "gem_energy_cost": 40,
+    "gem_energy_amount": 100
+  },
+  "generation": {
+    "energy_cost": 3,
+    "daily_uses_per_generator": 28
+  },
+  "chains": {
+    "ingredient": {
+      "name": "食材",
+      "items": [
+        {"tier": 1, "name": "小麦", "glyph": "🌾"},
+        {"tier": 2, "name": "面粉", "glyph": "🥣"},
+        {"tier": 3, "name": "面团", "glyph": "🥖"},
+        {"tier": 4, "name": "面包篮", "glyph": "🧺"},
+        {"tier": 5, "name": "早餐拼盘", "glyph": "🍽️"}
+      ]
+    },
+    "coffee": {
+      "name": "咖啡",
+      "items": [
+        {"tier": 1, "name": "咖啡豆", "glyph": "🫘"},
+        {"tier": 2, "name": "研磨咖啡", "glyph": "⚙️"},
+        {"tier": 3, "name": "咖啡壶", "glyph": "🫖"},
+        {"tier": 4, "name": "拿铁", "glyph": "☕"},
+        {"tier": 5, "name": "双杯套餐", "glyph": "🥂"}
+      ]
+    },
+    "decor": {
+      "name": "装饰",
+      "items": [
+        {"tier": 1, "name": "布料", "glyph": "🧵"},
+        {"tier": 2, "name": "桌布", "glyph": "🟦"},
+        {"tier": 3, "name": "餐垫", "glyph": "▦"},
+        {"tier": 4, "name": "花瓶", "glyph": "🏺"},
+        {"tier": 5, "name": "花艺摆件", "glyph": "💐"}
+      ]
+    },
+    "dessert": {
+      "name": "甜点",
+      "items": [
+        {"tier": 1, "name": "奶油", "glyph": "🥛"},
+        {"tier": 2, "name": "蛋糕胚", "glyph": "🍰"},
+        {"tier": 3, "name": "水果挞", "glyph": "🥧"},
+        {"tier": 4, "name": "甜品塔", "glyph": "🎂"},
+        {"tier": 5, "name": "庆典甜点", "glyph": "✨"}
+      ]
+    }
+  },
+  "generators": [
+    {
+      "id": "pantry",
+      "name": "食材柜",
+      "chain": "ingredient",
+      "tier": 1,
+      "energy_cost": 3,
+      "daily_uses": 28
+    },
+    {
+      "id": "coffee_machine",
+      "name": "咖啡机",
+      "chain": "coffee",
+      "tier": 1,
+      "energy_cost": 3,
+      "daily_uses": 24
+    },
+    {
+      "id": "linen_chest",
+      "name": "织物柜",
+      "chain": "decor",
+      "tier": 1,
+      "energy_cost": 4,
+      "daily_uses": 20
+    },
+    {
+      "id": "dessert_cart",
+      "name": "甜点车",
+      "chain": "dessert",
+      "tier": 1,
+      "energy_cost": 4,
+      "daily_uses": 18
+    }
+  ],
+  "starting_items": [
+    {"chain": "ingredient", "tier": 1},
+    {"chain": "ingredient", "tier": 1},
+    {"chain": "ingredient", "tier": 2},
+    {"chain": "coffee", "tier": 1},
+    {"chain": "coffee", "tier": 1},
+    {"chain": "coffee", "tier": 2},
+    {"chain": "decor", "tier": 1},
+    {"chain": "decor", "tier": 1},
+    {"chain": "dessert", "tier": 1},
+    {"chain": "dessert", "tier": 1},
+    {"chain": "dessert", "tier": 2},
+    {"chain": "ingredient", "tier": 2}
+  ],
+  "orders": [
+    {
+      "id": "breakfast",
+      "title": "晨间双人桌",
+      "requirements": [{"chain": "ingredient", "tier": 2, "count": 1}],
+      "reward": {"coins": 55, "stars": 1}
+    },
+    {
+      "id": "coffee_pair",
+      "title": "咖啡与甜点",
+      "requirements": [
+        {"chain": "coffee", "tier": 2, "count": 1},
+        {"chain": "dessert", "tier": 1, "count": 1}
+      ],
+      "reward": {"coins": 85, "stars": 2}
+    },
+    {
+      "id": "table_setting",
+      "title": "靠窗桌位",
+      "requirements": [{"chain": "decor", "tier": 2, "count": 1}],
+      "reward": {"coins": 70, "stars": 1}
+    },
+    {
+      "id": "dessert_plate",
+      "title": "午后甜品车",
+      "requirements": [{"chain": "dessert", "tier": 2, "count": 1}],
+      "reward": {"coins": 95, "stars": 2}
+    },
+    {
+      "id": "gift_basket",
+      "title": "节日礼篮",
+      "requirements": [
+        {"chain": "ingredient", "tier": 3, "count": 1},
+        {"chain": "decor", "tier": 2, "count": 1}
+      ],
+      "reward": {"coins": 135, "stars": 2}
+    },
+    {
+      "id": "signature_table",
+      "title": "招牌咖啡桌",
+      "requirements": [
+        {"chain": "coffee", "tier": 3, "count": 1},
+        {"chain": "dessert", "tier": 2, "count": 1}
+      ],
+      "reward": {"coins": 175, "stars": 3}
+    },
+    {
+      "id": "window_decor",
+      "title": "橱窗花艺",
+      "requirements": [{"chain": "decor", "tier": 3, "count": 1}],
+      "reward": {"coins": 120, "stars": 2}
+    },
+    {
+      "id": "family_feast",
+      "title": "家庭聚餐",
+      "requirements": [
+        {"chain": "ingredient", "tier": 3, "count": 1},
+        {"chain": "coffee", "tier": 2, "count": 1},
+        {"chain": "dessert", "tier": 2, "count": 1}
+      ],
+      "reward": {"coins": 210, "stars": 3}
+    }
+  ],
+  "renovations": [
+    {
+      "id": "entrance",
+      "title": "门廊与招牌",
+      "stars_required": 3,
+      "coins_required": 140
+    },
+    {
+      "id": "dining_hall",
+      "title": "主餐区翻新",
+      "stars_required": 8,
+      "coins_required": 320
+    },
+    {
+      "id": "terrace",
+      "title": "露台花园",
+      "stars_required": 14,
+      "coins_required": 620
+    },
+    {
+      "id": "grand_opening",
+      "title": "餐厅重新开业",
+      "stars_required": 22,
+      "coins_required": 980
+    }
+  ],
+  "iap_packs": [
+    {
+      "id": "starter_pack",
+      "name": "开业迎新包",
+      "price_usd": 2.99,
+      "one_time": true,
+      "grants": {"gems": 300, "energy": 180, "coins": 600}
+    },
+    {
+      "id": "energy_pack",
+      "name": "后厨能量包",
+      "price_usd": 1.99,
+      "one_time": false,
+      "grants": {"energy": 150}
+    },
+    {
+      "id": "gem_pack",
+      "name": "装修宝石包",
+      "price_usd": 4.99,
+      "one_time": false,
+      "grants": {"gems": 620}
+    },
+    {
+      "id": "value_pack",
+      "name": "周末经营组合",
+      "price_usd": 9.99,
+      "one_time": false,
+      "grants": {"gems": 1200, "energy": 500, "coins": 1600}
+    }
+  ],
+  "player_segments": [
+    {
+      "id": "non_payer",
+      "name": "非付费",
+      "share": 0.88,
+      "daily_budget": 0.0,
+      "daily_visit_probability": 0.75,
+      "offer_buy_probability": 0.0
+    },
+    {
+      "id": "minnow",
+      "name": "小额付费",
+      "share": 0.1,
+      "daily_budget": 5.0,
+      "daily_visit_probability": 0.85,
+      "offer_buy_probability": 0.08
+    },
+    {
+      "id": "dolphin",
+      "name": "中额付费",
+      "share": 0.02,
+      "daily_budget": 20.0,
+      "daily_visit_probability": 0.95,
+      "offer_buy_probability": 0.18
+    }
+  ],
+  "simulation": {
+    "days": 14,
+    "session_action_limit": 90,
+    "daily_target_orders": 4,
+    "default_players": 1200,
+    "default_seed": 20261110
+  },
+  "design_targets": {
+    "orders_per_active_day": [0.5, 2.0],
+    "average_stage_by_day_14": [1.5, 3.5],
+    "synthetic_payer_rate_note": "由配置的分层付费概率推导，不代表市场基准。",
+    "energy_block_days_max": 4
+  }
+}

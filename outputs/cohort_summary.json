@@ -1,0 +1,21 @@
+{
+  "players": 1200,
+  "avg_active_days": 10.614166666666666,
+  "payer_rate": 0.018333333333333333,
+  "revenue_usd": 52.77,
+  "arppu_usd": 2.398636363636364,
+  "arpdau_usd": 0.004143047813456858,
+  "avg_orders": 6.755,
+  "avg_merges": 57.01166666666666,
+  "avg_generations": 61.76416666666667,
+  "avg_energy_spent": 193.1425,
+  "avg_energy_gained": 252.61166666666668,
+  "avg_coins_earned": 722.7708333333334,
+  "avg_coins_spent": 580.8666666666667,
+  "avg_stage_index": 2.0883333333333334,
+  "stage_3_rate": 0.3,
+  "avg_energy_block_days": 1.9541666666666666,
+  "avg_board_block_days": 0.0,
+  "avg_iap_offers": 0.19333333333333333,
+  "avg_purchases": 0.019166666666666665
+}
